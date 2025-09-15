@@ -270,7 +270,7 @@
             }
         }
     </style>
-<script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2F1Jc0VDvh0eA2AMecKBisW9%2Fsandbox%2FDNCO9h0nVIzoW5VG5X7w4D_1757973539211_na1fn_L2hvbWUvdWJ1bnR1L2luZGV4.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMUpjMFZEdmgwZUEyQU1lY0tCaXNXOS9zYW5kYm94L0ROQ085aDBuVkl6b1c1Vkc1WDd3NERfMTc1Nzk3MzUzOTIxMV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJsdVpHVjQuaHRtbCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3DVxTZj-tYYf5cXDNmBsieylvRrjeG3lLDyFhSdVpN5WsVxAsa3-QCupLtudP4SzIlU74B5XtvJm26k49e8rDs68cO5SbL2N-puXqq4Cnimlh0ezGHQUCHBlev47Wwe4axgEmojgbaTZ0ARncUqOI6myE7aa6jLZVpUHMU9Kt6JXuegj3Ka-iQ2TL3bQX04ZXU2dZrAE5LaWbdcDBJyPXrYIidzB71a4GjB04vlX2ZY3ySv8fPNuVGBsXCk4vijj~CfptvguYpr0Scl1H9ZFpGl~UERXXP~tQgub~urDf2QJ5z9QWdSxnEFqMUcF0GKkicc246VeKgZgQUy-Zy0gIn~w__&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
+<script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2F1Jc0VDvh0eA2AMecKBisW9%2Fsandbox%2FEjabiCi8GmyoG7u1llfODk_1757974967479_na1fn_L2hvbWUvdWJ1bnR1L2luZGV4.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMUpjMFZEdmgwZUEyQU1lY0tCaXNXOS9zYW5kYm94L0VqYWJpQ2k4R215b0c3dTFsbGZPRGtfMTc1Nzk3NDk2NzQ3OV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJsdVpHVjQuaHRtbCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3DPSucRVEM5295fTWIUq8p7o-mfhtPAvo9xtdMbdfNaHi8jFTSqtFE4Wju5axpH7so-~31K0LnBO4Ney~nNRvqQRsHryGoh-AEitzBCPyPGFnUioSP66Nqwp1Fpb8gvuPONksgm~ZYavHXo-nkJ4bCowMsYICy~tA6UyuVQTVEF22YGtJLEFyQG~H-Bssm4n4Ubg6Gdgnq0yGC9BVZJpX-4epHbtv4paMX2tEgD~Z7JSbU0jHKhoEEATqWDnrPhDzmDZ27ue5MJ9uoJjcLNzvBsbgdGbPWiYZ1yEKAXleQxxX4J22t89F9vkagT84xaZgG6HlVH3e0~7NgYYhzf1is7w__&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
 <body>
     <header>
         <div class="container">
@@ -481,7 +481,9 @@
     </main>
 
     <script>
-        function openResource(type) {
+        // Define the openResource function globally
+        window.openResource = function(type) {
+            console.log('Opening resource:', type); // Debug log
             switch(type) {
                 case 'slides':
                     window.open('slides.html', '_blank');
@@ -495,27 +497,38 @@
                     alert('This resource will be available soon!');
                     break;
                 default:
-                    alert('Resource not found');
+                    alert('Resource not found: ' + type);
             }
         }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your feedback! Your responses have been recorded.');
-            this.reset();
+            // Form submission handler
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your feedback! Your responses have been recorded.');
+                    this.reset();
+                });
+            }
+
+            // Test that openResource is available
+            console.log('openResource function is available:', typeof window.openResource === 'function');
         });
     </script>
 </body>
 </html>
-
