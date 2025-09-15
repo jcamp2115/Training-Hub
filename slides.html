@@ -119,6 +119,14 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
+        .slide-card.available {
+            border: 2px solid #28a745;
+        }
+
+        .slide-card.available .slide-thumbnail {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
         .slide-thumbnail {
             width: 100%;
             height: 200px;
@@ -176,6 +184,15 @@
             background: #e9ecef;
             padding: 0.25rem 0.5rem;
             border-radius: 12px;
+        }
+
+        .available-badge {
+            background: #28a745;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Coming Soon Section */
@@ -261,27 +278,59 @@
 
         .modal-content {
             background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
+            margin: 2% auto;
+            padding: 0;
             border-radius: 12px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
+            width: 95%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1rem 2rem;
+            background: #667eea;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
         }
 
         .close {
-            color: #aaa;
-            float: right;
+            color: white;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            background: none;
+            border: none;
         }
 
         .close:hover {
-            color: #000;
+            opacity: 0.8;
+        }
+
+        .modal-body {
+            padding: 0;
+            height: calc(90vh - 80px);
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .coming-soon-modal {
+            padding: 2rem;
+            text-align: center;
         }
     </style>
-<script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2F1Jc0VDvh0eA2AMecKBisW9%2Fsandbox%2FDNCO9h0nVIzoW5VG5X7w4D_1757973539212_na1fn_L2hvbWUvdWJ1bnR1L3NsaWRlcw.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMUpjMFZEdmgwZUEyQU1lY0tCaXNXOS9zYW5kYm94L0ROQ085aDBuVkl6b1c1Vkc1WDd3NERfMTc1Nzk3MzUzOTIxMl9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOc2FXUmxjdy5odG1sIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3Do-P2NjEXjQ3RALGhqzz~IIVN90rwSJm3YevO7bD3k5ylkno0DxcIXJvqgfLRA3U8lfgnd1Z~9RkVdaMgUbddnflB-OrDl0uI-gWYGiNzjzK4J5U3C1oeRgszaQx2Iwsy-Eubf~Ay-YzPsP5AWBlgYazz7bMKK5rd5U~n0TU8o6NW~7wcZfPFio2nlDdMg6NlvE6CYHmk3lbb7S1xlINhiTMHwWdf6ITjGB0vKQFXPEQeu8q8a4f5BHNvW6jwCYZ91O8lB~dUvCmXIwzQWLYyhcvXsVqI6jO8hg-pQLVPMjLhIUpBCrtylhOq7ox4kCXYdRJEmzbJJkSOgwMgLhoVKA__&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
+<script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2F1Jc0VDvh0eA2AMecKBisW9%2Fsandbox%2F1lwIixPPasFLcZP3orddDS_1757974910644_na1fn_L2hvbWUvdWJ1bnR1L3NsaWRlc191cGRhdGVk.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMUpjMFZEdmgwZUEyQU1lY0tCaXNXOS9zYW5kYm94LzFsd0lpeFBQYXNGTGNaUDNvcmRkRFNfMTc1Nzk3NDkxMDY0NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNOc2FXUmxjMTkxY0dSaGRHVmsuaHRtbCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3DSZy3awmWK9OklQfXcqgobRGkx60ciClwYsGovJmHSDA03seLe~qFz0hy7epXFiTDvoAT2wrFkuGGYV6WyDlf554Ka49AJmTXcXddSmYnBTsBTO6k~n410o-LwIA3LM27RFJx9S~5qELqo1OXor2wdrdrqBGStpQIwuhlWRVW9R8hUihKVfsUbiI2r~HxV5M5VNsUXA~Lef435y-x33qlqqnhpfJNGDn2Ymkzsgnw9f0D~exk8-cf5mMXVisG7vTly5atUvHXPfjXRyEUNfqMEErlE~LtBzMysMs~sylfZXAM8nOAE53rwI6bUyk0cd56R5HPG1wmoQ54QEaKxftlOg__&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="cce8e36f88a54954b8e1bae15ed" src="//local.adguard.org?ts=1757969281780&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
 <body>
     <header>
         <div class="container">
@@ -306,9 +355,24 @@
                 <p>Access comprehensive Google Slides presentations covering essential Medical Assistant skills, procedures, and best practices. Each presentation is designed to enhance your learning experience with visual aids and interactive content.</p>
             </section>
 
-            <!-- Sample Slides Grid -->
+            <!-- Slides Grid -->
             <section class="slides-grid">
-                <!-- Slide 1: HIPAA Training -->
+                <!-- Slide 1: Scheduling (AVAILABLE) -->
+                <div class="slide-card available" onclick="openSlide('scheduling')">
+                    <div class="slide-thumbnail">
+                        📅
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-title">Scheduling</div>
+                        <div class="slide-description">Master appointment scheduling, patient coordination, and calendar management for efficient healthcare operations.</div>
+                        <div class="slide-meta">
+                            <span>Interactive slides</span>
+                            <span class="available-badge">AVAILABLE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: HIPAA Training -->
                 <div class="slide-card" onclick="openSlide('hipaa')">
                     <div class="slide-thumbnail">
                         🔒
@@ -323,7 +387,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: EMR Systems -->
+                <!-- Slide 3: EMR Systems -->
                 <div class="slide-card" onclick="openSlide('emr')">
                     <div class="slide-thumbnail">
                         💻
@@ -338,7 +402,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: Patient Communication -->
+                <!-- Slide 4: Patient Communication -->
                 <div class="slide-card" onclick="openSlide('communication')">
                     <div class="slide-thumbnail">
                         💬
@@ -353,7 +417,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 4: Insurance Verification -->
+                <!-- Slide 5: Insurance Verification -->
                 <div class="slide-card" onclick="openSlide('insurance')">
                     <div class="slide-thumbnail">
                         📋
@@ -368,7 +432,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 5: Telehealth Procedures -->
+                <!-- Slide 6: Telehealth Procedures -->
                 <div class="slide-card" onclick="openSlide('telehealth')">
                     <div class="slide-thumbnail">
                         📱
@@ -378,21 +442,6 @@
                         <div class="slide-description">Virtual care protocols, technology setup, and patient support for remote medical consultations.</div>
                         <div class="slide-meta">
                             <span>20 slides</span>
-                            <span class="slide-duration">20 min</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: Quality Assurance -->
-                <div class="slide-card" onclick="openSlide('quality')">
-                    <div class="slide-thumbnail">
-                        ✅
-                    </div>
-                    <div class="slide-content">
-                        <div class="slide-title">Quality Assurance Protocols</div>
-                        <div class="slide-description">Maintaining high standards in patient care, documentation accuracy, and continuous improvement processes.</div>
-                        <div class="slide-meta">
-                            <span>18 slides</span>
                             <span class="slide-duration">20 min</span>
                         </div>
                     </div>
@@ -414,59 +463,82 @@
     <!-- Modal for slide preview -->
     <div id="slideModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3 id="modalTitle">Presentation Preview</h3>
-            <p id="modalDescription">This presentation is currently being prepared and will be available soon.</p>
-            <p><strong>What you can do:</strong></p>
-            <ul style="text-align: left; margin: 1rem 0;">
-                <li>Bookmark this page for easy access</li>
-                <li>Subscribe to notifications above</li>
-                <li>Check back regularly for updates</li>
-                <li>Contact your supervisor for immediate training needs</li>
-            </ul>
-            <button onclick="closeModal()" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Got it!</button>
+            <div class="modal-header">
+                <h3 id="modalTitle">Presentation</h3>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here -->
+            </div>
         </div>
     </div>
 
     <script>
         function openSlide(slideType) {
             const slideInfo = {
+                'scheduling': {
+                    title: 'Scheduling',
+                    type: 'iframe',
+                    content: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRahl9m4aEFGJDiUBIpMU2AjIzXKKlZAMjJmwJQXpTHpiY-x7BZco0tkB8spcIEyJ5Uesa4HnbEFHZg/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'
+                },
                 'hipaa': {
                     title: 'HIPAA Privacy & Security',
+                    type: 'coming-soon',
                     description: 'This comprehensive HIPAA training presentation covers patient privacy rights, security protocols, and compliance requirements for medical assistants.'
                 },
                 'emr': {
                     title: 'Electronic Medical Records',
+                    type: 'coming-soon',
                     description: 'Learn EMR system navigation, data entry best practices, and digital record management in this detailed presentation.'
                 },
                 'communication': {
                     title: 'Patient Communication Skills',
+                    type: 'coming-soon',
                     description: 'Develop effective communication strategies for various patient interactions and challenging situations.'
                 },
                 'insurance': {
                     title: 'Insurance Verification Process',
+                    type: 'coming-soon',
                     description: 'Master the insurance verification workflow with step-by-step guidance and real-world examples.'
                 },
                 'telehealth': {
                     title: 'Telehealth Best Practices',
+                    type: 'coming-soon',
                     description: 'Understand virtual care protocols and technology requirements for successful telehealth sessions.'
-                },
-                'quality': {
-                    title: 'Quality Assurance Protocols',
-                    description: 'Learn quality assurance standards and continuous improvement processes in healthcare settings.'
                 }
             };
 
             const info = slideInfo[slideType];
             if (info) {
                 document.getElementById('modalTitle').textContent = info.title;
-                document.getElementById('modalDescription').textContent = info.description;
+                const modalBody = document.getElementById('modalBody');
+                
+                if (info.type === 'iframe') {
+                    modalBody.innerHTML = info.content;
+                } else {
+                    modalBody.innerHTML = `
+                        <div class="coming-soon-modal">
+                            <p>${info.description}</p>
+                            <p><strong>What you can do:</strong></p>
+                            <ul style="text-align: left; margin: 1rem 0; max-width: 400px; margin-left: auto; margin-right: auto;">
+                                <li>Bookmark this page for easy access</li>
+                                <li>Subscribe to notifications above</li>
+                                <li>Check back regularly for updates</li>
+                                <li>Contact your supervisor for immediate training needs</li>
+                            </ul>
+                            <button onclick="closeModal()" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-top: 1rem;">Got it!</button>
+                        </div>
+                    `;
+                }
+                
                 document.getElementById('slideModal').style.display = 'block';
             }
         }
 
         function closeModal() {
             document.getElementById('slideModal').style.display = 'none';
+            // Clear iframe content to stop any videos/audio
+            document.getElementById('modalBody').innerHTML = '';
         }
 
         function subscribeNotifications(event) {
@@ -480,7 +552,7 @@
         window.onclick = function(event) {
             const modal = document.getElementById('slideModal');
             if (event.target == modal) {
-                modal.style.display = 'none';
+                closeModal();
             }
         }
 
@@ -497,6 +569,14 @@
                 }, index * 100);
             });
         });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
+
