@@ -530,5 +530,35 @@
             console.log('openResource function is available:', typeof window.openResource === 'function');
         });
     </script>
+    <script>
+function openResource(resource) {
+    switch(resource) {
+        case "training-videos":
+            // window.location.href = "videos.html";
+            alert("Training Videos page coming soon!");
+            break;
+        case "google-slides":
+            window.location.href = "slides.html";
+            break;
+        case "youtube-playlist":
+            window.open("https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID", "_blank");
+            break;
+        case "workflow-knowledge":
+            // window.location.href = "workflow.html";
+            alert("Workflow Knowledge page coming soon!");
+            break;
+        case "wish-i-knew":
+            // window.location.href = "wish-i-knew.html";
+            alert("What I Wish I Knew page coming soon!");
+            break;
+        case "quick-reference":
+            // window.location.href = "reference.html";
+            alert("Quick Reference page coming soon!");
+            break;
+        default:
+            alert("Resource not found.");
+    }
+}
+</script>
 </body>
 </html>
